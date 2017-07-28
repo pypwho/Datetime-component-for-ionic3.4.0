@@ -1,0 +1,56 @@
+page-date-com {
+  .chooseTypeBtn {
+    font-size: 1.5rem;
+    width: 23%;
+    margin: 4%;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  #dateItem ion-label {
+    text-align: center;
+    color: #5c83f1;
+  }
+  #dateItem .item-inner {
+    border-bottom: 0.55px solid #5c83f1;
+  }
+  #chooseAreaDiv {
+    width: 100%;
+    height: 240px;
+    border: 1px solid;
+    margin-top: 40px;
+  }
+  .yearScroll {
+    width: 50%;
+    height: 100%;
+    margin: auto;
+    border: 1px solid red;
+  }
+  #yearChoosedDiv {
+    position: absolute;
+    height: 40px;
+    width: 100%;
+    border: 1px solid blue;
+    top: 100px;
+    bottom: 100px;
+  }
+  .yearNum {
+    text-align: center;
+    width: 100%;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+  .liList {
+    text-align: center;
+    font-size: 2rem;
+    margin: 5px;
+  }
+  .choosedIcon {
+    color: green;
+    font-size: 1.7rem;
+  }
+
+  .unChoosed {
+    color: #b0b4b0;
+    font-size: 1.5rem;
+  }
+}

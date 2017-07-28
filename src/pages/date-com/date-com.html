@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button (click)="dismissDateFilter()">取消</button>
+    </ion-buttons>
+    <ion-title>
+      选择时间
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="applyDateFilters()">完成</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-buttons start>
+    <button ion-button color="light" [ngClass]="{choosedIcon:type==='Y',unChoosed:type !=='Y'}" class="chooseTypeBtn" (click)="choosedType('Y')">按年选择</button>
+    <button ion-button color="light" [ngClass]="{choosedIcon:type==='M',unChoosed:type !=='M'}" class="chooseTypeBtn" (click)="choosedType('M')">按月选择</button>
+    <button ion-button color="light" [ngClass]="{choosedIcon:type==='D',unChoosed:type !=='D'}" class="chooseTypeBtn" (click)="choosedType('D')">按日选择</button>
+  </ion-buttons>
+  <ion-item id="dateItem">
+    <ion-label>{{myDate}}</ion-label>
+  </ion-item>
+  <ion-backdrop (click)="bdClick()"></ion-backdrop>
+  <div class="picker-columns">
+    <div class="picker-above-highlight"></div>
+    <div *ngFor="let c of d.columns" [col]="c" class="picker-col" (ionChange)="_colChange($event)"></div>
+    <div class="picker-below-highlight"></div>
+  </div>
+</ion-content>
