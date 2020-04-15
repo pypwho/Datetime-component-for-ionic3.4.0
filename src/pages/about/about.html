@@ -1,11 +1,28 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      About
+      左侧分类
     </ion-title>
   </ion-navbar>
 </ion-header>
-
-<ion-content padding>
-
+<ion-content>
+  <ion-scroll scrollY="true" class="left_scroll">
+    <div *ngFor="let one of dataList;index as i" class="category-name" [ngClass]="{'current-category-index':i===currentCategoryIndex}" (click)="scrollToIndex(i)">
+      {{one.name}}
+    </div>
+  </ion-scroll>
+  <ion-scroll #rightScroll id="rightScroll" scrollY="true" class="right_scroll">
+    <div *ngFor="let one of dataList;index as i" [id]="'category_'+i">
+      <div class="category-name">{{one.name}}</div>
+      <div class="product" *ngFor="let product of one.list">
+        <div class="product-image">
+          <img src="https://img.alicdn.com/imgextra/i2/725677994/O1CN01FUqXAQ28vIjt6mCJk_!!0-item_pic.jpg_430x430q90.jpg"/>
+        </div>
+        <div class="product-desc">
+          <div>{{product.name}}</div>
+          <div class="mainColor">¥{{product.price}}</div>
+        </div>
+      </div>
+    </div>
+  </ion-scroll>
 </ion-content>
